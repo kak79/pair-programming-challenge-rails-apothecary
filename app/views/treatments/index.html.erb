@@ -1,0 +1,14 @@
+<h1>Treatments</h1>
+
+<%= link_to 'New Treatment', new_treatment_path %>
+
+<table>
+  <% @treatments.each do |t| %>
+
+  <tr>
+    <td><%= link_to @treatment.name, @treatment %></td>
+    <td><%= @treatment.description %></td>
+  </tr>
+
+  <% end %>
+</table>

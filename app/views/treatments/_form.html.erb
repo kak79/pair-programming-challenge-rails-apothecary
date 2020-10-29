@@ -1,0 +1,22 @@
+<% if treatment.errors.any? %>
+  <ul class="error-messages">
+
+    <% treatment.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+
+  </ul>
+<% end %>
+
+<%= form_with model: treatment do |form| %>
+
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <br>
+
+  <%= form.label :description %>
+  <%= form.text_area :description %>
+  <br>
+
+  <%= form.submit %>
+<% end %>
