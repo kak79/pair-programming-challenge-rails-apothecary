@@ -14,6 +14,10 @@ h1 {
   text-align: center;
 }
 
+a {
+  color: green;
+}
+
 // navbar
 
 nav {
@@ -56,15 +60,33 @@ form {
   }
 }
 
+form.button_to {
+  display: block;
+  margin: 0;
+}
+
+// treatments table
+
+#treatments-table {
+  border: solid black 2px;
+
+    td {
+      border: solid black 2px;
+      min-width: 20em;
+      text-align: center;
+    }
+
+    margin-bottom: 1em;
+
+}
+
 // footer
 
 footer {
   background-image: image_url('katherine-hanlon-mod2s3-qFOc-unsplash.jpg');
   background-position: center;
   background-size: cover;
-  height: 25vh;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  height: 20vh;
+  margin-top: 1em;
   width: 100%;
 }
