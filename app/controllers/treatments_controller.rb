@@ -11,17 +11,16 @@ class TreatmentsController < ApplicationController
 
   def create
     @treatment = Treatment.new(treatment_params)
-      if @treatment.save
-        redirect_to @treatment, notice: 'Treatment was successfully created.'
-      else
-        render :new
-      end
+    if @treatment.save
+      redirect_to @treatment, notice: 'Treatment was successfully created.'
+    else
+      render :new
     end
   end
 
   def update
     if @treatment.update(treatment_params)
-      redirect_to @treatment, notice: 'Treatment was successfully updated.' }
+      redirect_to @treatment, notice: 'Treatment was successfully updated.'
     else
       render :edit
     end
@@ -29,7 +28,7 @@ class TreatmentsController < ApplicationController
 
   def destroy
     @treatment.destroy
-    redirect_to treatments_url, notice: 'Treatment was successfully destroyed.'\
+    redirect_to treatments_url, notice: 'Treatment was successfully destroyed.'
   end
 
   private

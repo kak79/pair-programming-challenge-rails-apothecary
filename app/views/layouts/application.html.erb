@@ -5,11 +5,26 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <nav>
+      <%= link_to "Login", '#' %>
+      <%= link_to "Signup", '#' %>
+      <%= link_to "Treatments", treatments_path %>
+      <%= link_to "Your Profile", '#' %>
+      <%= link_to "Logout", '#' %>
+    </nav>
+
+    <div id="pharmacy-icon-container">      
+      <%= image_tag image_url('pharmacy-icon'), alt: "Rails Pharmacy", id: "pharmacy-icon" %>
+    </div>
+
     <%= yield %>
+
+    <footer></footer>
   </body>
 </html>

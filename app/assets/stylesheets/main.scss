@@ -1,3 +1,70 @@
-// Place all the styles related to the treatments controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+// general
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background-color: #EAE6DD;
+}
+
+h1 {
+  text-align: center;
+}
+
+// navbar
+
+nav {
+  background-image: image_url('matt-briney-0tfz7ZoXaWc-unsplash.jpg');
+  background-position: center;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  // link_to children
+  a {
+    color: white;
+    background: #000a;
+    text-align: center;
+  }
+
+}
+
+// pharmacy icon
+
+#pharmacy-icon-container {
+  text-align: center;
+  width: 100%;
+}
+
+#pharmacy-icon {
+  width: 100px;
+}
+
+// form
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-left: 20vw;
+  margin-right: 20vw;
+
+  label {
+    text-align: center;
+  }
+}
+
+// footer
+
+footer {
+  background-image: image_url('katherine-hanlon-mod2s3-qFOc-unsplash.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 25vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
