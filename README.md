@@ -56,6 +56,8 @@ Build out a profile page for users that lists all the treatments prescribed to t
 
 - Be sure to check your schema and make sure the proper foreign keys have been included.
 
+- Since the prescribe / unprescribe buttons are available in several places, it might be good to create a partial for them...
+
 **BONUSES:**
 
 - A user shouldn't be prescribed the same treatment twice (no duplicate prescriptions)
