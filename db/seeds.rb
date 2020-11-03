@@ -1,3 +1,8 @@
+puts "Removing previous data..."
+
+Prescription.destroy_all
+Treatment.destroy_all
+
 puts "Creating treatments..."
 
 treatments = [
@@ -38,7 +43,7 @@ treatments = [
 puts "Seeding treatments..."
 
 treatments.each do |tr|
-  puts "Created treatment: #{tr.name}" if Treatment.create(tr)
+  puts "Created treatment: #{tr[:name]}" if Treatment.create(tr)
 end
 
 puts "Treatments seeded..."
