@@ -11,20 +11,26 @@
   </head>
 
   <body>
-    <nav>
-      <%= link_to "Login", '#' %>
-      <%= link_to "Signup", '#' %>
-      <%= link_to "Treatments", treatments_path %>
-      <%= link_to "Your Profile", '#' %>
-      <%= link_to "Logout", '#' %>
-    </nav>
 
-    <div id="pharmacy-icon-container">      
-      <%= image_tag image_url('pharmacy-icon'), alt: "Rails Pharmacy", id: "pharmacy-icon" %>
+    <div id="main-container">
+
+      <nav>
+        <%= link_to "Login", '#' %>
+        <%= link_to "Signup", '#' %>
+        <%= link_to "Treatments", treatments_path %>
+        <%= link_to "Your Profile", '#' %>
+        <%= link_to "Logout", '#' %>
+      </nav>
+
+      <div id="pharmacy-icon-container">
+        <%= image_tag image_url('pharmacy-icon'), alt: "Rails Pharmacy", id: "pharmacy-icon" %>
+      </div>
+
+      <%= yield %>
+
     </div>
 
-    <%= yield %>
-
     <footer></footer>
+
   </body>
 </html>
