@@ -36,13 +36,15 @@ Build out controllers as necessary so that users can login, signup, and logout. 
 
 The controllers for logging in and signing up look very similar to how they looked in Sinatra. Rails also automatically enables sessions for your use. If you'd like to build helper methods like `current_user` and `logged_in?`, you can utilize private methods or the helper files.
 
-## Treatment Show Page
+## Treatment Show and Index Page
 
 Currently the show page for treatments is mostly correct, however there are two buttons on the page that don't work. One is a button to prescribe a treatment, the other is a button to unprescribe a treatment.
 
 When the first button is clicked, that treatment needs to get prescribed to the current user. The other will unprescribe a treatment from the user.
 
 The button ought to render conditionally so that if a user isn't prescribed to a treatment, they only see the button to prescribe to it and vice versa.
+
+The index page ought to utilize similar logic in order to conditionally render the proper button.
 
 ## User Profile Page
 
