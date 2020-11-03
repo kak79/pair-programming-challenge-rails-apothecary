@@ -1,7 +1,5 @@
 # Pair Programming Challenge - Rails Apothecary
 
-TODO: Styling
-
 A local apothecary has asked you to help them build their brand new website (their former web developers went back to school to study Reiki).
 
 It's up to you to finish building out the user functionality for the website and to make sure people are able to sign up, log in, and prescribe their proper treatments.
