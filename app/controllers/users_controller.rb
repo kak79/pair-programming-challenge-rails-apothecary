@@ -7,15 +7,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    byebug
-    if @user = User.find_by(username: params[:username]).nil?
-      @username = User.new(user_params)
-      if @username.save
-        session[:username_id] = @username.id
-        redirect_to user_path(@username)
-      end
+    @user = User.new(user_params)
+    if @user.save
+      session[:username_id] = @user.id
+      redirect_to user_path(@user)
+    else
+      render :new
     end
-    render :new
   end
 
   def index

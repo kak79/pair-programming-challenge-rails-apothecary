@@ -1,20 +1,21 @@
 class SessionsController < ApplicationController
 
-  def new
+  def login
+    @user = User.new
   end
 
-  def create
-    byebug
-    user = User.find_by(username: params[:username])
-    if user && user.authenticate(params[:password])
-      session[:username_id] = user.id
+  def post_login
+    @user = User.find_by(username: params[:user][:username])
+    if @user && @user.authenticate(params[:user][:password])
+      session[:username_id] = @user.id
       redirect_to user_path(@user)
     else
-      render :new
+      @user ||= User.new
+      render :login
     end
   end
 
-  def destroy
+  def logout
     session.destroy
     redirect_to login_path
   end

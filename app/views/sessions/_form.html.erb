@@ -1,22 +1,22 @@
-<% if @user.errors.any? %>
+<% if user.errors.any? %>
   <ul class="error-messages">
 
-    <% @user.errors.full_messages.each do |message| %>
+    <% user.errors.full_messages.each do |message| %>
     <li><%= message %></li>
     <% end %>
 
   </ul>
+<% end %>
 
-  <%= form_with model: @user do |form| %>
+<%= form_with model: user, url: path do |form| %>
 
-    <%= form.label :username %>
-    <%= form.text_field :username %>
+  <%= form.label :username %>
+  <%= form.text_field :username %>
 
-    <%= form.label :password %>
-    <%= form.text_field :password %>
+  <%= form.label :password %>
+  <%= form.text_field :password %>
 
-    <br>
+  <br>
 
-    <%= form.submit  %>
-  <% end %>
+  <%= form.submit submit_message %>
 <% end %>
