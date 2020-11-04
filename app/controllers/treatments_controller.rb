@@ -33,7 +33,8 @@ class TreatmentsController < ApplicationController
 
   private
     def set_treatment
-      @treatment = Treatment.find(params[:id])
+      @treatment = Treatment.find_by_id(params[:id])
+      redirect_to treatments_path if !@treatment
     end
 
     def treatment_params
