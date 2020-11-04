@@ -1,0 +1,22 @@
+<% if session.errors.any? %>
+  <ul class="error-messages">
+
+    <% session.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+
+  </ul>
+<% end %>
+
+<%= form_with model: session do |form| %>
+
+  <%= form.label :username %>
+  <%= form.text_field :username %>
+
+  <%= form.label :password %>
+  <%= form.text_field :password %>
+
+  <br>
+
+  <%= form.submit  %>
+<% end %>
