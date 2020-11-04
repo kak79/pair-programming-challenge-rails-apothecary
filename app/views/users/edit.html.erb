@@ -1,4 +1,6 @@
 <h1>Edit <%= @user.name %></h1>
 
-<%= render 'form', user: @user %>
-<%= render 'form', message: "Edit User" %>
+<%= render 'sessions/form', user: @user, submit_message: "Edit User", path: users_path %>
+
+
+<%= button_to "Delete User", user_path(@user), method: :delete, data: {confirm: "Do you want to delete user?"} %>
