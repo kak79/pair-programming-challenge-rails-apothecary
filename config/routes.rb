@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
+resources :treatments
 
-  resources :users, only: [:index, :new, :show] do
+  resources :users do
     resources :prescriptions
   end
 
-  post '/users/:id', to: 'users#show'
+  
+    get "/login" => "sessions#new"
+    post "/login" => "sessions#create"
+    delete "/logout" => "sessions#destroy"
+  
 
-  get '/users/login', to: 'users#login', as: 'login'
 
 end
