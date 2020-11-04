@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+    byebug
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
       session[:username_id] = @user.id
@@ -34,5 +35,9 @@ class SessionsController < ApplicationController
       redirect_to users_path
     end
   end
+
+  def sesison_params
+  params.require(:user).permit(:username, :password)
+end
 
 end
