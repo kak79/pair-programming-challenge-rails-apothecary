@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
 
+  module application_helper
+
   def login
     @user = User.new
   end
@@ -19,25 +21,5 @@ class SessionsController < ApplicationController
     session.destroy
     redirect_to login_path
   end
-
-  private
-
-  def logged_in?
-    !!current_user
-  end
-
-  def current_user
-    @user ||= User.find_by_id(session[:user_id])
-  end
-
-  def verify
-    if !logged_in?
-      redirect_to users_path
-    end
-  end
-
-  def sesison_params
-  params.require(:user).permit(:username, :password)
-end
 
 end
