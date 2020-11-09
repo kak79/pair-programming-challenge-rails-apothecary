@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-  module application_helper
+  include ApplicationHelper
 
   def login
     @user = User.new

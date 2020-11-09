@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  
-  module application_helper
+
+  include ApplicationHelper
 
   before_action :find_user, only: [:show, :edit]
 
@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def show
     if logged_in?
       redirect_to user_path(@user)
-    else  
+    else
       render :new
     end
   end
