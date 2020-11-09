@@ -1,3 +1,7 @@
-<h1> <% @users.name %> </h1>
-<h3> <% @prescription.treatment_id.name %> </h3>
-<p> <% @prescription.treatment_id.description %> </p>
+<h1> <%= @user.username %> </h1>
+<h3>Treatments</h3>
+<% @user.prescriptions.each do |perscription| %>
+  <li>
+  <%= treatment.name %>
+  </li>
+<% end %>

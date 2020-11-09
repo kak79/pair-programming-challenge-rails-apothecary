@@ -9,9 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if logged_in?
-      redirect_to user_path(@user)
-    else
+    if !logged_in?
       render :new
     end
   end
