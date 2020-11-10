@@ -11,7 +11,7 @@
 <%= form_with model: treatment do |form| %>
 
   <%= form.label :name %>
-  <%= form.collection_select :name, Treatment.all, :id, "name" %>
+  <%= form.collection_select :id, Treatment.all, :id, "name" %>
 
   <br>
 
