@@ -11,8 +11,9 @@ class TreatmentsController < ApplicationController
 
   def create
     @treatment = Treatment.new(treatment_params)
+    byebug
     if @treatment.save
-      redirect_to @treatment, notice: 'Treatment was successfully created.'
+      redirect_to treatment_path(@treatment), notice: 'Treatment was successfully created.'
     else
       render :new
     end
@@ -38,6 +39,6 @@ class TreatmentsController < ApplicationController
     end
 
     def treatment_params
-      params.require(:treatment).permit(:name, :description)
+      params.require(:treatment).permit(:name)
     end
 end
