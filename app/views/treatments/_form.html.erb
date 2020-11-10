@@ -11,10 +11,7 @@
 <%= form_with model: treatment do |form| %>
 
   <%= form.label :name %>
-  <%= form.text_field :name %>
-
-  <%= form.label :description %>
-  <%= form.text_area :description %>
+  <%= form.collection_select :name, Treatment.all, :id, "name" %>
 
   <br>
 
