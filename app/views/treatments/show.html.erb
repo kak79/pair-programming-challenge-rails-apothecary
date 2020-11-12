@@ -2,13 +2,7 @@
 
 <p>Description: <%= @treatment.description %></p>
 
-<%= form_with(url: "/users/#{@user.id}/prescriptions", method: "post") do %>
-  <%= hidden_field_tag(:user_id, @user.id) %>
-  <%= hidden_field_tag(:treatment_id, @treatment.id ) %>
-  <%= submit_tag "Prescribe" %>
-<% end %>
-
-<%# button_to "Prescribe", user_prescriptions_path(@user) %>
+<%= button_to "Prescribe", user_prescriptions_path(@user) ,  method: :post,  params: {treatment_id: @treatment.id, user_id: @user_id}, data: {confirm: "Do you want to create this prescription?"} %>
 
 <%= link_to 'Edit', edit_treatment_path(@treatment) %> |
 <%= link_to 'Back', treatments_path %>
