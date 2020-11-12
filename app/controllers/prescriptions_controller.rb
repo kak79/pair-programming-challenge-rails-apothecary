@@ -1,9 +1,11 @@
 class PrescriptionsController < ApplicationController
 
   def create
+    #binding.pry
     @prescription = Prescription.new(prescription_params)
     if @prescription.save
       flash[:messages] = ["Successfully prescribed #{@prescription.treatment.name}"]
+      redirect_to user_path
     else
       flash[:errors] = @prescription.errors.full_messages if !@prescrition.valid?
     end
@@ -20,7 +22,7 @@ class PrescriptionsController < ApplicationController
   private
 
   def prescription_params
-    params.require(:prescription).permit(:user_id, :treament_id)
+    params.permit(:user_id, :treatment_id )
   end
 
   def set_prescription

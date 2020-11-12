@@ -9,9 +9,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    if !logged_in?
-      render :new
-    end
+
+    # if !logged_in?
+    #   render :new
+    # end
+
   end
 
   def create
@@ -26,6 +28,12 @@ class UsersController < ApplicationController
 
   def index
     @user = User.all
+  end
+
+  private
+
+  def find_user
+    @user = User.find_by(id: params[:id])
   end
 
 end

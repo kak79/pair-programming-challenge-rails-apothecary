@@ -1,8 +1,7 @@
 <h1> <%= @user.username %> </h1>
 <h3>Treatments</h3>
-<% @user.prescriptions.each do |perscription| %>
+<% @user.prescriptions.each do |prescription| %>
   <li>
-  <%= byebug %>
-  <%= treatment.name %>
+  <%= prescription.treatment.name %>
   </li>
 <% end %>

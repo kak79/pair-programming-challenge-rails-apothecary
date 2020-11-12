@@ -9,6 +9,10 @@ class TreatmentsController < ApplicationController
     @treatment = Treatment.new
   end
 
+  def show
+    @prescription = Prescription.new
+  end
+
   def create
     binding.pry
     @treatment = Treatment.new(treatment_params)
@@ -36,6 +40,7 @@ class TreatmentsController < ApplicationController
   private
     def set_treatment
       @treatment = Treatment.find_by_id(params[:id])
+      @user = User.find_by_id(session[:username_id])
       redirect_to treatments_path if !@treatment
     end
 
