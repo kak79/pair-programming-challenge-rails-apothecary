@@ -10,6 +10,7 @@ class TreatmentsController < ApplicationController
   end
 
   def create
+    binding.pry
     @treatment = Treatment.new(treatment_params)
     #byebug
     if @treatment.save
