@@ -11,7 +11,7 @@ class TreatmentsController < ApplicationController
 
   def create
     @treatment = Treatment.new(treatment_params)
-    byebug
+    #byebug
     if @treatment.save
       redirect_to treatment_path(@treatment), notice: 'Treatment was successfully created.'
     else
