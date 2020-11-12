@@ -13,6 +13,14 @@
   <body>
 
     <div id="main-container">
+      <% if flash[:messages]&.present?  %>
+        <% flash[:messages].each do |flash| %>
+          <div>
+            <%# binding.pry %>
+            <%= flash %>
+          </div>
+        <% end %>
+      <% end %>
 
       <nav>
         <%= link_to "Login", login_path %>
