@@ -5,11 +5,12 @@ class PrescriptionsController < ApplicationController
     @prescription = Prescription.new(prescription_params)
     if @prescription.save
       flash[:messages] = ["Successfully prescribed #{@prescription.treatment.name}"]
-      redirect_to user_path
+      redirect_to user_path(@prescription.user_id)
     else
       flash[:errors] = @prescription.errors.full_messages if !@prescrition.valid?
+      redirect_back(fallback_location: treatments_path)
     end
-    redirect_back(fallback_location: treatments_path)
+
   end
 
   def destroy
